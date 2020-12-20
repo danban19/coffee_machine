@@ -8,7 +8,7 @@ class CoffeeMachine:
         self.money = 550
         self.running = False
 
-    def making_coffee(self):
+    def making_coffee(self):  # choosing a function of the coffee machine
         self.running = True
         self.action = input("Write action (buy, fill, take, remaining, exit):\n")
         if self.action == "buy":
@@ -22,7 +22,7 @@ class CoffeeMachine:
         if self.action == "exit":
             exit()
 
-    def buy(self):
+    def buy(self):  # choosing coffee to buy
         print("")
         self.chosen_coffee = input("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu:")
         if self.chosen_coffee == "back":
@@ -75,7 +75,7 @@ class CoffeeMachine:
         print('')
         self.making_coffee()
 
-    def fill(self):
+    def fill(self):  # choosing resources to fill
         print("")
         self.water += int(input("Write how many ml of water do you want to add:"))
         self.milk += int(input("Write how many ml of milk do you want to add:"))
@@ -84,14 +84,14 @@ class CoffeeMachine:
         print('')
         self.making_coffee()
 
-    def take(self):
+    def take(self):  # taking money from the coffee machine
         print("")
         print("I gave you ${}".format(self.money))
         self.money = 0
         print('')
         self.making_coffee()
 
-    def remaining(self):
+    def remaining(self):  # checking resources left
         print("")
         print("The coffee machine has:")
         print("{} of water".format(self.water))
